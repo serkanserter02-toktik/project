@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#8fd3ff">
+  <title>Brick Marathon</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect y=%2710%27 width=%2732%27 height=%2722%27 rx=%274%27 fill=%27%23e4002b%27/%3E%3Crect x=%274%27 y=%274%27 width=%269%27 height=%276%27 fill=%27%23e4002b%27/%3E%3Crect x=%2719%27 y=%274%27 width=%269%27 height=%276%27 fill=%27%23e4002b%27/%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+  <main id="ui">
+    <div id="ticker" aria-live="off">
+      <b class="tk-label">🏆 OVERALL</b>
+      <div class="tk-view"><div class="tk-track" id="tkTrack"></div></div>
+    </div>
+    <header id="hud" hidden>
+      <div class="hud-time" id="timeLeft">00:00</div>
+      <div class="hud-progress"><i id="progress"></i></div>
+      <div class="hud-leader">Leader: <b id="leaderName">-</b> · <span id="leaderDist">0 m</span></div>
+    </header>
+
+    <div id="countdown" hidden></div>
+    <div id="banner" hidden>FINISH!</div>
+    <nav id="boosts" hidden></nav>
+
+    <section id="results" class="panel brick" hidden>
+      <h2 id="resTitle">🏆 Standings</h2>
+      <div class="tabs" id="resTabs" role="tablist" hidden>
+        <button type="button" role="tab" data-tab="race" class="on">This Race</button>
+        <button type="button" role="tab" data-tab="total">Overall</button>
+      </div>
+      <div class="res-bar" id="resBar" hidden><i></i></div>
+      <ol id="rankList"></ol>
+      <ol id="totalList" hidden></ol>
+      <p class="next">Next race in <b id="nextIn">30</b> s</p>
+    </section>
+    <div id="conn" hidden>Connecting…</div>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
